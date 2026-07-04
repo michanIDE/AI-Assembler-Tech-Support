@@ -1,4 +1,16 @@
 
+AI Assembler Tech Support
+=======
+Addon for [AI Assembler](https://github.com/michanIDE) that teaches it to read recipes from tech mods (Mekanism, Thermal, Tinkers, etc.). See `dev/specification.md` and `dev/development_plan.md` for scope and progress.
+
+Required local setup:
+--------
+This project depends on the AI Assembler base mod jar, which is **not** committed to this repo. Before building:
+
+1. Build the base mod (in the sibling `../base` project): `./gradlew build`
+2. Copy the resulting jar into `libs/` here, e.g. `libs/ai_assembler-1.0.0.jar`
+3. If the version differs from `mekanism_version`/`ai_assembler` coordinates in `build.gradle`/`gradle.properties`, update those to match.
+
 Installation information
 =======
 

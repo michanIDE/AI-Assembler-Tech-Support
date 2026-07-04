@@ -27,3 +27,6 @@ dev
 .vscode
 
 repo
+
+# vendored dependency jars (build locally, see README)
+libs/

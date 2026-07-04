@@ -81,6 +81,66 @@ description='''${mod_description}'''
     ordering="NONE"
     side="BOTH"
 
+# AI Assembler (base mod) is required
+[[dependencies.${mod_id}]]
+    modId="ai_assembler"
+    mandatory=true
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Optional tech mod integrations — load after them so their registries exist
+[[dependencies.${mod_id}]]
+    modId="mekanism"
+    mandatory=false
+    versionRange="[10.4,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="ae2"
+    mandatory=false
+    versionRange="[15.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="tconstruct"
+    mandatory=false
+    versionRange="[3.7,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="draconicevolution"
+    mandatory=false
+    versionRange="[3.1,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="fluxnetworks"
+    mandatory=false
+    versionRange="[7.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="industrialforegoing"
+    mandatory=false
+    versionRange="[3.5,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="integrateddynamics"
+    mandatory=false
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# TODO Phase 2: add Thermal Series and Re:Avaritia once their exact modids are verified
+
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.
