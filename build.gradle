@@ -150,13 +150,23 @@ dependencies {
 
     // AI Assembler (required base mod) — jar in ./libs via the flatDir repository,
     // built from the sibling ../base project
-    modImplementation "blank:ai_assembler:1.0.0"
+    modImplementation "blank:ai_assembler:1.0.1"
 
     // --- Optional tech mod integrations (compile against, never shipped) ---
     // Mekanism
     modCompileOnly "mekanism:Mekanism:${mekanism_version}"
     // Uncomment to test in-game with Mekanism loaded:
     modLocalRuntime "mekanism:Mekanism:${mekanism_version}"
+
+    // Thermal Series. The recipe classes (cofh.thermal.lib/core) live in a jarjar-nested
+    // thermal_core jar inside thermal_foundation, which Gradle doesn't expand for compile —
+    // so compile against a copy of the inner jar extracted into ./libs (see README), while
+    // the runtime uses the real mods from CurseMaven (FML expands jarjar at runtime).
+    modCompileOnly "curse.maven:${cofh_core_cm}"
+    modCompileOnly "blank:thermal_core:${thermal_core_version}"
+    modLocalRuntime "curse.maven:${cofh_core_cm}"
+    modLocalRuntime "curse.maven:${thermal_foundation_cm}"
+    modLocalRuntime "curse.maven:${thermal_expansion_cm}"
 
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")

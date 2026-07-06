@@ -9,7 +9,10 @@ This project depends on the AI Assembler base mod jar, which is **not** committe
 
 1. Build the base mod (in the sibling `../base` project): `./gradlew build`
 2. Copy the resulting jar into `libs/` here, e.g. `libs/ai_assembler-1.0.0.jar`
-3. If the version differs from `mekanism_version`/`ai_assembler` coordinates in `build.gradle`/`gradle.properties`, update those to match.
+3. Extract the jarjar-nested `thermal_core` jar into `libs/` as well (needed at compile time;
+   Gradle doesn't expand jarjar nesting): download thermal_foundation from CurseForge, then
+   `unzip -j thermal_foundation-*.jar "META-INF/jarjar/thermal_core-*.jar" -d libs/`
+4. If versions differ from the coordinates in `gradle.properties` (`thermal_core_version`, etc.), update those to match.
 
 Installation information
 =======

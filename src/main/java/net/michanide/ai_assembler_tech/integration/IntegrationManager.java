@@ -22,6 +22,7 @@ public final class IntegrationManager {
         // Deliberately lambdas, not constructor references: a method reference would resolve (and
         // classload) the integration class as soon as this static block runs, defeating the gate.
         add("mekanism", () -> new net.michanide.ai_assembler_tech.integration.mekanism.MekanismIntegration());
+        add("thermal_foundation", () -> new net.michanide.ai_assembler_tech.integration.thermal.ThermalIntegration());
     }
 
     private IntegrationManager() {

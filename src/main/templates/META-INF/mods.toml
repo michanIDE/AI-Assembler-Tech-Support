@@ -139,7 +139,14 @@ description='''${mod_description}'''
     ordering="AFTER"
     side="BOTH"
 
-# TODO Phase 2: add Thermal Series and Re:Avaritia once their exact modids are verified
+[[dependencies.${mod_id}]]
+    modId="thermal_foundation"
+    mandatory=false
+    versionRange="[11.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# TODO Phase 2: add Re:Avaritia once its exact modid is verified
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
