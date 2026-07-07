@@ -23,6 +23,8 @@ public final class IntegrationManager {
         // classload) the integration class as soon as this static block runs, defeating the gate.
         add("mekanism", () -> new net.michanide.ai_assembler_tech.integration.mekanism.MekanismIntegration());
         add("thermal_foundation", () -> new net.michanide.ai_assembler_tech.integration.thermal.ThermalIntegration());
+        add("tconstruct", () -> new net.michanide.ai_assembler_tech.integration.tconstruct.TinkersIntegration());
+        add("industrialforegoing", () -> new net.michanide.ai_assembler_tech.integration.industrialforegoing.IndustrialForegoingIntegration());
     }
 
     private IntegrationManager() {

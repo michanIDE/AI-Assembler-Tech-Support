@@ -33,6 +33,22 @@ repositories {
             includeGroup 'curse.maven'
         }
     }
+    maven {
+        name = 'SlimeKnights'
+        url = 'https://dvs1.progwml6.com/files/maven/'
+        content {
+            includeGroup 'slimeknights.tconstruct'
+            includeGroup 'slimeknights.mantle'
+        }
+    }
+    maven {
+        name = 'BlameJared'
+        url = 'https://maven.blamejared.com'
+        content {
+            includeGroup 'com.buuz135'
+            includeGroup 'com.hrznstudio'
+        }
+    }
 }
 
 base {
@@ -167,6 +183,18 @@ dependencies {
     modLocalRuntime "curse.maven:${cofh_core_cm}"
     modLocalRuntime "curse.maven:${thermal_foundation_cm}"
     modLocalRuntime "curse.maven:${thermal_expansion_cm}"
+
+    // Tinkers Construct (+ required library Mantle, whose recipe helpers the processors use)
+    modCompileOnly "slimeknights.tconstruct:TConstruct:${tconstruct_version}"
+    modCompileOnly "slimeknights.mantle:Mantle:${mantle_version}"
+    modLocalRuntime "slimeknights.tconstruct:TConstruct:${tconstruct_version}"
+    modLocalRuntime "slimeknights.mantle:Mantle:${mantle_version}"
+
+    // Industrial Foregoing (+ required library Titanium, whose recipe base classes IF uses)
+    modCompileOnly "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
+    modCompileOnly "com.hrznstudio:titanium:${titanium_version}"
+    modLocalRuntime "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
+    modLocalRuntime "com.hrznstudio:titanium:${titanium_version}"
 
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")

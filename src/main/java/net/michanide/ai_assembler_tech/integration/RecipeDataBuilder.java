@@ -48,6 +48,12 @@ public final class RecipeDataBuilder {
         return this;
     }
 
+    /** Adds an input consumed with the given probability per operation (expected cost weighting). */
+    public RecipeDataBuilder inputItems(List<ItemStack> alternatives, double chance) {
+        addItems(ingredients, alternatives, chance);
+        return this;
+    }
+
     /** Adds one input slot that accepts any of the given fluid alternatives. */
     public RecipeDataBuilder inputFluids(List<FluidStack> alternatives) {
         addFluids(ingredients, alternatives);
