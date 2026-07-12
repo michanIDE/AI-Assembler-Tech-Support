@@ -49,6 +49,12 @@ repositories {
             includeGroup 'com.hrznstudio'
         }
     }
+    mavenCentral {
+        content {
+            // GuideME (AE2's guidebook library) publishes straight to Maven Central
+            includeGroup 'org.appliedenergistics'
+        }
+    }
 }
 
 base {
@@ -195,6 +201,11 @@ dependencies {
     modCompileOnly "com.hrznstudio:titanium:${titanium_version}"
     modLocalRuntime "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
     modLocalRuntime "com.hrznstudio:titanium:${titanium_version}"
+
+    // Applied Energistics 2 (+ GuideME, a hard runtime requirement of AE2 15.4.x)
+    modCompileOnly "appeng:appliedenergistics2-forge:${ae2_version}"
+    modLocalRuntime "appeng:appliedenergistics2-forge:${ae2_version}"
+    modLocalRuntime "org.appliedenergistics:guideme:${guideme_version}"
 
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")

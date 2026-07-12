@@ -25,6 +25,7 @@ public final class IntegrationManager {
         add("thermal_foundation", () -> new net.michanide.ai_assembler_tech.integration.thermal.ThermalIntegration());
         add("tconstruct", () -> new net.michanide.ai_assembler_tech.integration.tconstruct.TinkersIntegration());
         add("industrialforegoing", () -> new net.michanide.ai_assembler_tech.integration.industrialforegoing.IndustrialForegoingIntegration());
+        add("ae2", () -> new net.michanide.ai_assembler_tech.integration.ae2.AE2Integration());
     }
 
     private IntegrationManager() {
