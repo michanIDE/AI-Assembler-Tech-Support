@@ -146,7 +146,13 @@ description='''${mod_description}'''
     ordering="AFTER"
     side="BOTH"
 
-# TODO Phase 2: add Re:Avaritia once its exact modid is verified
+# Re:Avaritia (the 1.20.1 revival keeps the original's modid)
+[[dependencies.${mod_id}]]
+    modId="avaritia"
+    mandatory=false
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't

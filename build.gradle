@@ -239,6 +239,14 @@ dependencies {
     modLocalRuntime "maven.modrinth:cyclops-core:${cyclopscore_version}"
     modLocalRuntime "maven.modrinth:common-capabilities:${commoncapabilities_version}"
 
+    // Re:Avaritia (compressor recipes need a processor for their input counts)
+    modCompileOnly "maven.modrinth:re-avaritia:${reavaritia_version}"
+    modLocalRuntime "maven.modrinth:re-avaritia:${reavaritia_version}"
+
+    // Flux Networks — runtime only: all its recipes are plain vanilla crafting,
+    // verified to go through the default path with no processor needed
+    modLocalRuntime "curse.maven:${fluxnetworks_cm}"
+
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")
 
