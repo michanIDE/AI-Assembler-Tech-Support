@@ -27,6 +27,7 @@ public final class IntegrationManager {
         add("industrialforegoing", () -> new net.michanide.ai_assembler_tech.integration.industrialforegoing.IndustrialForegoingIntegration());
         add("ae2", () -> new net.michanide.ai_assembler_tech.integration.ae2.AE2Integration());
         add("draconicevolution", () -> new net.michanide.ai_assembler_tech.integration.draconicevolution.DraconicIntegration());
+        add("integrateddynamics", () -> new net.michanide.ai_assembler_tech.integration.integrateddynamics.IntegratedDynamicsIntegration());
     }
 
     private IntegrationManager() {

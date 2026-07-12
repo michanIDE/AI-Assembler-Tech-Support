@@ -64,6 +64,13 @@ repositories {
             includeGroup 'io.codechicken'
         }
     }
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content {
+            includeGroup 'maven.modrinth'
+        }
+    }
 }
 
 base {
@@ -223,6 +230,14 @@ dependencies {
     modLocalRuntime "com.brandon3055.draconicevolution:Draconic-Evolution:${draconicevolution_version}:universal"
     modLocalRuntime "com.brandon3055.brandonscore:BrandonsCore:${brandonscore_version}:universal"
     modLocalRuntime "io.codechicken:CodeChickenLib:${codechickenlib_version}:universal"
+
+    // Integrated Dynamics (+ required libraries: Cyclops Core, whose ItemStackFromIngredient
+    // appears in the squeezer/drying basin recipe APIs, and CommonCapabilities, runtime-only)
+    modCompileOnly "maven.modrinth:integrated-dynamics:${integrateddynamics_version}"
+    modCompileOnly "maven.modrinth:cyclops-core:${cyclopscore_version}"
+    modLocalRuntime "maven.modrinth:integrated-dynamics:${integrateddynamics_version}"
+    modLocalRuntime "maven.modrinth:cyclops-core:${cyclopscore_version}"
+    modLocalRuntime "maven.modrinth:common-capabilities:${commoncapabilities_version}"
 
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")
