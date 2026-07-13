@@ -6,6 +6,8 @@ import mekanism.api.MekanismAPI;
 import mekanism.api.chemical.Chemical;
 import net.michanide.ai_assembler_tech.AIAssemblerTech;
 import net.michanide.ai_assembler_tech.integration.TechIntegration;
+import net.michanide.aiassembler.util.recipe.ExtraRecipeRegistry;
+import net.michanide.aiassembler.util.recipe.RecipeData;
 import net.michanide.aiassembler.util.recipe.SpecialIngredientsRegistry;
 import net.michanide.aiassembler.util.recipe.SpecialRecipeRegistry;
 import net.minecraft.resources.ResourceKey;
@@ -38,9 +40,29 @@ public final class MekanismIntegration implements TechIntegration {
                 types++;
             }
         }
+        registerSyntheticRecipes();
+
         AIAssemblerTech.LOGGER.info(
                 "Mekanism integration: {} chemicals registered as special ingredients, {} recipe types routed",
                 chemicals, types);
+    }
+
+    /**
+     * Conversions hardcoded in multiblock machine logic rather than data-driven recipes: the
+     * fission reactor burns fissile fuel into nuclear waste (1:1 mB) and the SPS condenses
+     * 1000 mB of polonium into 1 mB of antimatter. Neither exists in the RecipeManager, so
+     * without these the production chain from uranium to antimatter pellets is disconnected.
+     * Amounts are in buckets, matching {@link MekanismRecipeProcessor}'s mB scaling.
+     */
+    private static void registerSyntheticRecipes() {
+        ExtraRecipeRegistry.register(new RecipeData(
+                "ai_assembler_tech:mekanism/fission_reactor", "mekanism:fission_reactor",
+                Map.of("mekanism:fissile_fuel", 0.001),
+                Map.of("mekanism:nuclear_waste", 0.001)));
+        ExtraRecipeRegistry.register(new RecipeData(
+                "ai_assembler_tech:mekanism/sps", "mekanism:sps",
+                Map.of("mekanism:polonium", 1.0),
+                Map.of("mekanism:antimatter", 0.001)));
     }
 
     private static int registerChemicals(IForgeRegistry<? extends Chemical<?>> registry) {

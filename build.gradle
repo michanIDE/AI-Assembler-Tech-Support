@@ -188,7 +188,7 @@ dependencies {
 
     // AI Assembler (required base mod) — jar in ./libs via the flatDir repository,
     // built from the sibling ../base project
-    modImplementation "blank:ai_assembler:1.2.1"
+    modImplementation "blank:ai_assembler:1.3.0"
 
     // --- Optional tech mod integrations (compile against, never shipped) ---
     // Mekanism
