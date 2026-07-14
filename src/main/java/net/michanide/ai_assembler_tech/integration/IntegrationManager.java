@@ -29,6 +29,7 @@ public final class IntegrationManager {
         add("draconicevolution", () -> new net.michanide.ai_assembler_tech.integration.draconicevolution.DraconicIntegration());
         add("integrateddynamics", () -> new net.michanide.ai_assembler_tech.integration.integrateddynamics.IntegratedDynamicsIntegration());
         add("avaritia", () -> new net.michanide.ai_assembler_tech.integration.avaritia.AvaritiaIntegration());
+        add("fluxnetworks", () -> new net.michanide.ai_assembler_tech.integration.fluxnetworks.FluxNetworksIntegration());
     }
 
     private IntegrationManager() {
