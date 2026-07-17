@@ -193,8 +193,6 @@ dependencies {
     // --- Optional tech mod integrations (compile against, never shipped) ---
     // Mekanism
     modCompileOnly "mekanism:Mekanism:${mekanism_version}"
-    // Uncomment to test in-game with Mekanism loaded:
-    modLocalRuntime "mekanism:Mekanism:${mekanism_version}"
 
     // Thermal Series. The recipe classes (cofh.thermal.lib/core) live in a jarjar-nested
     // thermal_core jar inside thermal_foundation, which Gradle doesn't expand for compile —
@@ -202,50 +200,64 @@ dependencies {
     // the runtime uses the real mods from CurseMaven (FML expands jarjar at runtime).
     modCompileOnly "curse.maven:${cofh_core_cm}"
     modCompileOnly "blank:thermal_core:${thermal_core_version}"
-    modLocalRuntime "curse.maven:${cofh_core_cm}"
-    modLocalRuntime "curse.maven:${thermal_foundation_cm}"
-    modLocalRuntime "curse.maven:${thermal_expansion_cm}"
 
     // Tinkers Construct (+ required library Mantle, whose recipe helpers the processors use)
     modCompileOnly "slimeknights.tconstruct:TConstruct:${tconstruct_version}"
     modCompileOnly "slimeknights.mantle:Mantle:${mantle_version}"
-    modLocalRuntime "slimeknights.tconstruct:TConstruct:${tconstruct_version}"
-    modLocalRuntime "slimeknights.mantle:Mantle:${mantle_version}"
 
     // Industrial Foregoing (+ required library Titanium, whose recipe base classes IF uses)
     modCompileOnly "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
     modCompileOnly "com.hrznstudio:titanium:${titanium_version}"
-    modLocalRuntime "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
-    modLocalRuntime "com.hrznstudio:titanium:${titanium_version}"
 
-    // Applied Energistics 2 (+ GuideME, a hard runtime requirement of AE2 15.4.x)
+    // Applied Energistics 2
     modCompileOnly "appeng:appliedenergistics2-forge:${ae2_version}"
-    modLocalRuntime "appeng:appliedenergistics2-forge:${ae2_version}"
-    modLocalRuntime "org.appliedenergistics:guideme:${guideme_version}"
 
-    // Draconic Evolution (+ required libraries Brandon's Core and CodeChickenLib; BrandonsCore is
-    // also needed at compile time — IFusionRecipe's signatures reference its TechLevel)
+    // Draconic Evolution (+ Brandon's Core, needed at compile time too —
+    // IFusionRecipe's signatures reference its TechLevel)
     modCompileOnly "com.brandon3055.draconicevolution:Draconic-Evolution:${draconicevolution_version}:universal"
     modCompileOnly "com.brandon3055.brandonscore:BrandonsCore:${brandonscore_version}:universal"
-    modLocalRuntime "com.brandon3055.draconicevolution:Draconic-Evolution:${draconicevolution_version}:universal"
-    modLocalRuntime "com.brandon3055.brandonscore:BrandonsCore:${brandonscore_version}:universal"
-    modLocalRuntime "io.codechicken:CodeChickenLib:${codechickenlib_version}:universal"
 
-    // Integrated Dynamics (+ required libraries: Cyclops Core, whose ItemStackFromIngredient
-    // appears in the squeezer/drying basin recipe APIs, and CommonCapabilities, runtime-only)
+    // Integrated Dynamics (+ Cyclops Core, whose ItemStackFromIngredient appears in the
+    // squeezer/drying basin recipe APIs)
     modCompileOnly "maven.modrinth:integrated-dynamics:${integrateddynamics_version}"
     modCompileOnly "maven.modrinth:cyclops-core:${cyclopscore_version}"
-    modLocalRuntime "maven.modrinth:integrated-dynamics:${integrateddynamics_version}"
-    modLocalRuntime "maven.modrinth:cyclops-core:${cyclopscore_version}"
-    modLocalRuntime "maven.modrinth:common-capabilities:${commoncapabilities_version}"
 
     // Re:Avaritia (compressor recipes need a processor for their input counts)
     modCompileOnly "maven.modrinth:re-avaritia:${reavaritia_version}"
-    modLocalRuntime "maven.modrinth:re-avaritia:${reavaritia_version}"
 
-    // Flux Networks — runtime only: all its recipes are plain vanilla crafting,
-    // verified to go through the default path with no processor needed
-    modLocalRuntime "curse.maven:${fluxnetworks_cm}"
+    // Runtime classpath for dev-environment testing: all 9 supported tech mods plus their
+    // required libraries. Run with -PminimalRun to drop them all and launch with only the
+    // base mod — the classloading-safety check (every integration must skip, nothing crashes).
+    if (!project.hasProperty('minimalRun')) {
+        // Mekanism
+        modLocalRuntime "mekanism:Mekanism:${mekanism_version}"
+        // Thermal Series
+        modLocalRuntime "curse.maven:${cofh_core_cm}"
+        modLocalRuntime "curse.maven:${thermal_foundation_cm}"
+        modLocalRuntime "curse.maven:${thermal_expansion_cm}"
+        // Tinkers Construct
+        modLocalRuntime "slimeknights.tconstruct:TConstruct:${tconstruct_version}"
+        modLocalRuntime "slimeknights.mantle:Mantle:${mantle_version}"
+        // Industrial Foregoing
+        modLocalRuntime "com.buuz135:industrial-foregoing:${industrialforegoing_version}"
+        modLocalRuntime "com.hrznstudio:titanium:${titanium_version}"
+        // Applied Energistics 2 (+ GuideME, a hard runtime requirement of AE2 15.4.x)
+        modLocalRuntime "appeng:appliedenergistics2-forge:${ae2_version}"
+        modLocalRuntime "org.appliedenergistics:guideme:${guideme_version}"
+        // Draconic Evolution
+        modLocalRuntime "com.brandon3055.draconicevolution:Draconic-Evolution:${draconicevolution_version}:universal"
+        modLocalRuntime "com.brandon3055.brandonscore:BrandonsCore:${brandonscore_version}:universal"
+        modLocalRuntime "io.codechicken:CodeChickenLib:${codechickenlib_version}:universal"
+        // Integrated Dynamics (+ CommonCapabilities, a hard runtime requirement)
+        modLocalRuntime "maven.modrinth:integrated-dynamics:${integrateddynamics_version}"
+        modLocalRuntime "maven.modrinth:cyclops-core:${cyclopscore_version}"
+        modLocalRuntime "maven.modrinth:common-capabilities:${commoncapabilities_version}"
+        // Re:Avaritia
+        modLocalRuntime "maven.modrinth:re-avaritia:${reavaritia_version}"
+        // Flux Networks — runtime only: all its recipes are plain vanilla crafting,
+        // verified to go through the default path with no processor needed
+        modLocalRuntime "curse.maven:${fluxnetworks_cm}"
+    }
 
     // Example project dependency using a sister or child project:
     // modImplementation project(":myproject")

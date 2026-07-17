@@ -89,7 +89,7 @@ description='''${mod_description}'''
     ordering="AFTER"
     side="BOTH"
 
-# Optional tech mod integrations — load after them so their registries exist
+# Optional tech mod integrations - load after them so their registries exist
 [[dependencies.${mod_id}]]
     modId="mekanism"
     mandatory=false
