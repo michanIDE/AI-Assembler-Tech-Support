@@ -1,0 +1,175 @@
+AI Assembler Tech Support — Credits and Third-Party Notices
+===========================================================
+
+AI Assembler Tech Support is licensed under the MIT License (see LICENSE.txt).
+  Copyright 2026 michanide
+
+The mods listed below are development-time dependencies only: the addon compiles
+against their APIs and loads them in the dev environment for testing. None of
+their code or assets is bundled into the distributed ai_assembler_tech jar.
+Licenses are as declared by each mod (mods.toml / project repository).
+
+For each mod under the MIT License, the mod's copyright notice is reproduced
+below and the MIT License text in the "License texts" section at the end of
+this file applies to it, as that license requires.
+
+Required dependency
+-------------------
+
+AI Assembler
+  Author:    michanide
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright 2026 michanide
+  Source:    https://github.com/michanIDE/AI-Assembler
+
+Supported tech mods (all optional at runtime)
+---------------------------------------------
+
+Mekanism
+  Authors:   Aidancbrady, Thommy101, Thiakil, pupnewfster, dizzyd
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2017-2025 Aidan C. Brady
+  Source:    https://github.com/mekanism/Mekanism
+
+Thermal Series (Thermal Foundation, Thermal Expansion, CoFH Core)
+  Authors:   Team CoFH (King Lemming, Zeldo Kavira, covers1624, skyboy, Cynycal, Drullkus)
+  License:   CoFH "Don't Be a Jerk" License (Learn, Don't Steal); code and assets
+             remain the property of Team CoFH. The license text is distributed
+             with the mods and shown on their CurseForge project pages.
+  Source:    https://github.com/CoFH
+
+Tinkers' Construct
+  Authors:   Slime Knights
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2022 SlimeKnights
+  Source:    https://github.com/SlimeKnights/TinkersConstruct
+
+Industrial Foregoing
+  Author:    Buuz135
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2017 Buuz135
+  Source:    https://github.com/Buuz135/Industrial-Foregoing
+
+Applied Energistics 2
+  Authors:   Team AppliedEnergistics
+  License:   LGPL-3.0 (see "License texts" below)
+  Source:    https://github.com/AppliedEnergistics/Applied-Energistics-2
+
+Draconic Evolution
+  Author:    brandon3055
+  License:   CoFH "Don't Be a Jerk" License; code and assets remain the property
+             of brandon3055. See LICENSE.md in the source repository.
+  Source:    https://github.com/brandon3055/Draconic-Evolution
+
+Integrated Dynamics
+  Author:    rubensworks (kroeser)
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2015 Cyclops
+  Source:    https://github.com/CyclopsMC/IntegratedDynamics
+
+Re:Avaritia
+  Authors:   cnlimiter, cu6, MHanHanBing, IAFEnvoy, Asek3, MikhailTapio
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2022 cnlimiter
+  Source:    https://github.com/Nova-Committee/Re-Avaritia
+
+Flux Networks
+  Authors:   Sonar Sonic, BloCamLimb
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2017-2021 SonarSonic, BloCamLimb
+  Source:    https://github.com/sonarsonic/Flux-Networks
+
+Library mods (pulled in by the mods above)
+------------------------------------------
+
+Mantle (Tinkers' Construct)
+  Authors:   Slime Knights
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2022 SlimeKnights
+  Source:    https://github.com/SlimeKnights/Mantle
+
+Titanium (Industrial Foregoing)
+  Authors:   TheCodedOne, Buuz135
+  License:   LGPL-3.0 (see "License texts" below)
+  Source:    https://github.com/InnovativeOnlineIndustries/Titanium
+
+GuideME (Applied Energistics 2)
+  Author:    shartte
+  License:   LGPL-3.0 (see "License texts" below)
+  Source:    https://github.com/AppliedEnergistics/GuideME
+
+Brandon's Core (Draconic Evolution)
+  Author:    brandon3055
+  License:   CoFH "Don't Be a Jerk" License; code and assets remain the property
+             of brandon3055. See LICENSE.md in the source repository.
+  Source:    https://github.com/brandon3055/BrandonsCore
+
+CodeChickenLib (Draconic Evolution)
+  Authors:   ChickenBones, covers1624
+  License:   LGPL-2.1 (see "License texts" below)
+  Copyright: Copyright (C) 2013 Chicken-Bones
+             Copyright (c) 2018-2021 covers1624
+  Source:    https://github.com/TheCBProject/CodeChickenLib
+
+Cyclops Core (Integrated Dynamics)
+  Author:    rubensworks (kroeser)
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2015 Cyclops
+  Source:    https://github.com/CyclopsMC/CyclopsCore
+
+CommonCapabilities (Integrated Dynamics)
+  Author:    rubensworks (kroeser)
+  License:   MIT (see "License texts" below)
+  Copyright: Copyright (c) 2015 Cyclops
+  Source:    https://github.com/CyclopsMC/CommonCapabilities
+
+Platform
+--------
+
+Minecraft Forge
+  Authors:   Forge Development LLC and contributors
+  License:   LGPL-2.1 (see "License texts" below)
+  Source:    https://github.com/MinecraftForge/MinecraftForge
+
+License texts
+-------------
+
+MIT License
+~~~~~~~~~~~
+The following license applies to each mod above marked "MIT", together with
+that mod's copyright notice as listed in its entry:
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+
+GNU Lesser General Public License
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The mods above marked "LGPL-3.0" are licensed under the GNU Lesser General
+Public License, version 3 (https://www.gnu.org/licenses/lgpl-3.0.html), and
+those marked "LGPL-2.1" under version 2.1
+(https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html). This project uses
+these libraries unmodified and does not redistribute them; each mod's source
+is available at the linked repository.
+
+CoFH "Don't Be a Jerk" License
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A custom license used by Team CoFH (Thermal Series) and brandon3055
+(Draconic Evolution, Brandon's Core). All code and assets remain the property
+of their owners; redistribution or claiming ownership of the code is not
+permitted, while learning from it is. This project does not redistribute or
+repackage any of their code or assets.
